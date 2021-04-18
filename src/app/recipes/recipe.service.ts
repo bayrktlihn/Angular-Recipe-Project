@@ -14,7 +14,7 @@ export class RecipeService {
       'Tasty Schnitzel',
       'A super-tasty Schnitzel - just awesome!',
       'https://media-cdn.tripadvisor.com/media/photo-s/17/15/5c/68/the-large-and-tasty-chicken.jpg',
-      [new Ingredient('Meat', 2), new Ingredient('French Fries', 20)]
+      [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]
     ),
     new Recipe(
       'Big Fat Burger',
@@ -26,6 +26,10 @@ export class RecipeService {
 
   getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number): Recipe {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]): void {
